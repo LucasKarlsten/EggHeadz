@@ -1,0 +1,8 @@
+/home/luccelito/EggHeadz/src/main/java/se/nackademin/devops24/pingurl/Controller.java
+/home/luccelito/EggHeadz/src/main/java/se/nackademin/devops24/pingurl/PingUrlService.java
+/home/luccelito/EggHeadz/src/main/java/se/nackademin/devops24/pingurl/PingurlApplication.java
+/home/luccelito/EggHeadz/src/main/java/se/nackademin/devops24/pingurl/model/PingedURL.java
+/home/luccelito/EggHeadz/src/main/java/se/nackademin/devops24/pingurl/repository/MemoryURLRepository.java
+/home/luccelito/EggHeadz/src/main/java/se/nackademin/devops24/pingurl/repository/RepositoryConfiguration.java
+/home/luccelito/EggHeadz/src/main/java/se/nackademin/devops24/pingurl/repository/URLRepository.java
+/home/luccelito/EggHeadz/src/main/java/se/nackademin/devops24/pingurl/view/ViewConfiguration.java

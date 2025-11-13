@@ -13,6 +13,7 @@ import java.net.URISyntaxException;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
+import java.time.LocalDateTime;
 import java.util.Collection;
 import java.util.concurrent.TimeUnit;
 
@@ -39,6 +40,17 @@ public class PingUrlService {
         urlRepository.delete(name);
     }
 
+    // 🔹 används för "Ping nu"-knappen
+    public void pingUrlNow(String name) {
+        var pingedURLs = getPingUrls();
+        for (var pingedURL : pingedURLs) {
+            if (pingedURL.getName().equals(name)) {
+                pingUrl(pingedURL);
+                break;
+            }
+        }
+    }
+
     @Scheduled(fixedRate = 1, timeUnit = TimeUnit.MINUTES)
     public void onesPerMinute() {
         var pingedURLs = getPingUrls();
@@ -59,6 +71,9 @@ public class PingUrlService {
             } else {
                 pingedURL.setResult("failure");
             }
+
+            // 🔹 registrera senaste ping-tid
+            pingedURL.setLastPinged(LocalDateTime.now());
 
             urlRepository.update(pingedURL);
         } catch (IOException | InterruptedException | URISyntaxException e) {
