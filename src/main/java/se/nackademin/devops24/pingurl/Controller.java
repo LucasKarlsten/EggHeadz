@@ -38,4 +38,20 @@ public class Controller {
         pingUrlService.addPingUrl(url, name);
         return new RedirectView("/");
     }
+
+    // 🔹 ta bort skapad ping-url
+    @PostMapping("/pingurl/delete")
+    public RedirectView deleteUrl(@RequestParam String name) {
+        logger.info("Deleting URL with name: {}", name);
+        pingUrlService.deleteUrlFromPing(name);
+        return new RedirectView("/");
+    }
+
+    // 🔹 manuellt "Ping nu"
+    @PostMapping("/pingurl/ping")
+    public RedirectView pingNow(@RequestParam String name) {
+        logger.info("Manually pinging URL with name: {}", name);
+        pingUrlService.pingUrlNow(name);
+        return new RedirectView("/");
+    }
 }

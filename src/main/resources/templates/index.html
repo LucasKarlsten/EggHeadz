@@ -71,6 +71,24 @@
             <td th:text="${url.getUrl()}">URL...</td>
             <td th:text="${url.getCreatedAt()}">Created...</td>
             <td th:text="${url.getResult()}">Last ping status...</td>
+
+            <!-- Ny kolumn: senast pingad -->
+            <td th:text="${url.getLastPinged()}">Last pinged...</td>
+
+            <!-- Ny kolumn: actions -->
+            <td>
+                <!-- Ping now -->
+                <form th:action="@{/pingurl/ping}" method="post" style="display:inline">
+                    <input type="hidden" name="name" th:value="${url.getName()}" />
+                    <button type="submit">Ping now</button>
+                </form>
+
+                <!-- Delete -->
+                <form th:action="@{/pingurl/delete}" method="post" style="display:inline; margin-left: 5px;">
+                    <input type="hidden" name="name" th:value="${url.getName()}" />
+                    <button type="submit">Delete</button>
+                </form>
+            </td>
         </tr>
     </table>
 
