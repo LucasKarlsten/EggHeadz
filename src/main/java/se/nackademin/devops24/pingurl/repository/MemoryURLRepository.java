@@ -13,11 +13,15 @@ public class MemoryURLRepository implements URLRepository {
 
     @Override
     public void save(String name, String url) {
+        if (urls.containsKey(name)) {
+            throw new IllegalArgumentException(name + "already exists!");
+        }
         PingedURL pingedURL = new PingedURL()
                 .setName(name)
                 .setUrl(url)
                 .setCreatedAt(LocalDateTime.now());
-        urls.put(name, pingedURL);
+        urls.put(name, pingedURL) ;
+
     }
 
     @Override
