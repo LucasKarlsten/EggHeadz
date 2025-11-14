@@ -35,9 +35,15 @@ public class Controller {
     @PostMapping("/pingurl")
     public RedirectView addUrl(@RequestParam String url, @RequestParam String name) {
         logger.info("Received new URL: {} with name: {}", url, name);
-        pingUrlService.addPingUrl(url, name);
-        return new RedirectView("/");
+        try {
+            pingUrlService.addPingUrl(url, name);
+            return new RedirectView("/");
+        } catch (IllegalArgumentException e) {
+            logger.warn("Duplicate URL name, {}", name);
+            return new RedirectView("/error/500.html");
+        }
     }
+
 
     // 🔹 ta bort skapad ping-url
     @PostMapping("/pingurl/delete")

@@ -13,7 +13,7 @@ public class MemoryURLRepository implements URLRepository {
 
     @Override
     public void save(String name, String url) {
-        if (urls.containsKey(name)) {
+        if (urls.containsKey    (name)) {
             throw new IllegalArgumentException(name + "already exists!");
         }
         PingedURL pingedURL = new PingedURL()

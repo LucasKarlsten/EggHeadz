@@ -1,8 +1,0 @@
-se/nackademin/devops24/pingurl/Controller.class
-se/nackademin/devops24/pingurl/repository/URLRepository.class
-se/nackademin/devops24/pingurl/PingUrlService.class
-se/nackademin/devops24/pingurl/repository/RepositoryConfiguration.class
-se/nackademin/devops24/pingurl/view/ViewConfiguration.class
-se/nackademin/devops24/pingurl/model/PingedURL.class
-se/nackademin/devops24/pingurl/PingurlApplication.class
-se/nackademin/devops24/pingurl/repository/MemoryURLRepository.class
