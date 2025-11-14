@@ -31,7 +31,7 @@ class PingurlApplicationTests {
         try {
             URLTEST.save("google.com", "https://www.google.com");
             URLTEST.save("google.com", "https://www.googles.com");
-            System.out.println("Test passed: Duplicate was overwritten");
+            System.out.println("Test failed: Duplicate was overwritten");
             }
         catch (IllegalArgumentException e) {
             System.out.println("Test passed: Duplicate was not overwritten");

@@ -3,6 +3,7 @@ package se.nackademin.devops24.pingurl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.scheduling.annotation.Scheduled;
+import org.springframework.stereotype.Controller;
 import org.springframework.stereotype.Service;
 import se.nackademin.devops24.pingurl.model.PingedURL;
 import se.nackademin.devops24.pingurl.repository.URLRepository;
