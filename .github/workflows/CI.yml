@@ -8,15 +8,13 @@
 
 name: Java CI with Maven
 
-on:
-  push:
-    branches: [ "**" ]        # Testar alla branches när det pushas
+on:        # Testar alla branches när det pushas
   pull_request:
     branches: [ "main" ]      # Och PR:ar mot main
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
 
     steps:
     - uses: actions/checkout@v4
@@ -29,4 +27,15 @@ jobs:
         cache: maven
 
     - name: Build & test with Maven
-      run: mvn -B clean verify
+      run: mvn -B verify clean
+
+    - name: Package app
+      run: mvn -B package
+
+    - name: Deploy JAR
+      run: |
+        mkdir -p /opt/pingurl
+        cp target/pingurl-0.0.1-SNAPSHOT.jar /opt/pingurl/pingurl.jar
+
+    - name: Restart PingURL service
+      run: sudo systemctl restart pingurl.service
