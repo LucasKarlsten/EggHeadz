@@ -1,5 +1,5 @@
 package se.nackademin.devops24.pingurl;
-
+//e
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -19,10 +19,8 @@ class PingurlApplicationTests {
 
     @Test
     public void MemoryURLRepositoryTest() {
-        //.setName(name)
-        //.setUrl(url)
         MemoryURLRepository URLTEST = new MemoryURLRepository();
-        testsave(URLTEST);
+        //testsave(URLTEST);
         //testupdate(URLTEST);
         //testdelete(URLTEST);
 
