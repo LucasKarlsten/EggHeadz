@@ -1,0 +1,3 @@
+if running on linux
+
+run setup.sh
