@@ -2,12 +2,12 @@
   "name" : "google.com",
   "url" : "https://www.google.com",
   "createdAt" : [ 2025, 11, 18, 12, 37, 12, 357642550 ],
-  "lastPinged" : [ 2025, 11, 18, 12, 58, 24, 140122918 ],
+  "lastPinged" : [ 2025, 11, 18, 13, 32, 24, 127499698 ],
   "result" : "success"
 }, {
   "name" : "Aftonbladet.se",
   "url" : "https://www.Aftonbladet.se",
   "createdAt" : [ 2025, 11, 18, 12, 37, 12, 368164002 ],
-  "lastPinged" : [ 2025, 11, 18, 12, 58, 24, 327080497 ],
+  "lastPinged" : [ 2025, 11, 18, 13, 32, 24, 356762301 ],
   "result" : "success"
 } ]

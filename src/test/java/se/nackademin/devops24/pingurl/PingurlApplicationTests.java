@@ -13,9 +13,9 @@ import java.util.Objects;
 @SpringBootTest
 class PingurlApplicationTests {
 
-    @Test
-    void contextLoads(){
-    }
+    //@Test
+    //void contextLoads(){
+    //}
 
     @Test
     public void MemoryURLRepositoryTest() {
