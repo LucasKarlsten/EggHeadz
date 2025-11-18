@@ -31,7 +31,6 @@ jobs:
     - name: Build & test with Maven
       run: mvn -B clean verify
 
-
     - name: Package app
       run: mvn -B package
 
