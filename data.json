@@ -1,0 +1,13 @@
+[ {
+  "name" : "DN.se",
+  "url" : "https://www.DN.se",
+  "createdAt" : [ 2025, 11, 18, 14, 46, 30, 523196961 ],
+  "lastPinged" : [ 2025, 11, 18, 14, 46, 31, 51490307 ],
+  "result" : "success"
+}, {
+  "name" : "Nackademin.se",
+  "url" : "https://www.Nackademin.se",
+  "createdAt" : [ 2025, 11, 18, 14, 46, 30, 284875269 ],
+  "lastPinged" : [ 2025, 11, 18, 14, 46, 31, 282472325 ],
+  "result" : "failure"
+} ]
