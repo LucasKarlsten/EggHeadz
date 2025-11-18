@@ -56,8 +56,8 @@ public class JUnitTest {
     @Test
     void testAddUserandPing() {
         page.navigate("http://localhost:" + serverPort);
-        page.fill("input[name='name']:visible", "Aftonbladet.se");
-        page.fill("input[name='url']:visible", "https://www.Aftonbladet.se");
+        page.fill("input[name='name']:visible", "Nackademin.se");
+        page.fill("input[name='url']:visible", "https://www.Nackademin.se");
         page.click("input[type='submit']");
         page.fill("input[name='name']:visible", "DN.se");
         page.fill("input[name='url']:visible", "https://www.DN.se");
