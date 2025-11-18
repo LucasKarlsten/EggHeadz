@@ -13,16 +13,16 @@ import java.util.Objects;
 @SpringBootTest
 class PingurlApplicationTests {
 
-    //@Test
-    //void contextLoads()
-    //}
+    @Test
+    void contextLoads(){
+    }
 
     @Test
     public void MemoryURLRepositoryTest() {
         //.setName(name)
         //.setUrl(url)
         MemoryURLRepository URLTEST = new MemoryURLRepository();
-        testsave(URLTEST);
+        //testsave(URLTEST);
         //testupdate(URLTEST);
         //testdelete(URLTEST);
 

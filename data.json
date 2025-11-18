@@ -1,0 +1,13 @@
+[ {
+  "name" : "google.com",
+  "url" : "https://www.google.com",
+  "createdAt" : [ 2025, 11, 18, 12, 37, 12, 357642550 ],
+  "lastPinged" : [ 2025, 11, 18, 12, 58, 24, 140122918 ],
+  "result" : "success"
+}, {
+  "name" : "Aftonbladet.se",
+  "url" : "https://www.Aftonbladet.se",
+  "createdAt" : [ 2025, 11, 18, 12, 37, 12, 368164002 ],
+  "lastPinged" : [ 2025, 11, 18, 12, 58, 24, 327080497 ],
+  "result" : "success"
+} ]
