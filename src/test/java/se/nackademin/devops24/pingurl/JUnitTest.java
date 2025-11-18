@@ -67,6 +67,8 @@ public class JUnitTest {
         page.click("table tr:nth-child(2) form button[type='submit']");
         page.click("tr:has(td:has-text('Nackademin.se')) form:has(button:has-text('Delete')) button");
         page.click("tr:has(td:has-text('DN.se')) form:has(button:has-text('Delete')) button");
+
+
     }
 
 }
