@@ -1,5 +1,5 @@
 package se.nackademin.devops24.pingurl;
-//e
+
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -10,15 +10,16 @@ import java.net.URL;
 import java.util.Objects;
 
 @Nested
-@SpringBootTest
 class PingurlApplicationTests {
 
     //@Test
-    //void contextLoads()
+    //void contextLoads(){
     //}
 
     @Test
     public void MemoryURLRepositoryTest() {
+        //.setName(name)
+        //.setUrl(url)
         MemoryURLRepository URLTEST = new MemoryURLRepository();
         //testsave(URLTEST);
         //testupdate(URLTEST);
@@ -30,12 +31,12 @@ class PingurlApplicationTests {
             URLTEST.save("google.com", "https://www.google.com");
             URLTEST.save("google.com", "https://www.googles.com");
             System.out.println("Test failed: Duplicate was overwritten");
-            }
+        }
         catch (IllegalArgumentException e) {
             System.out.println("Test passed: Duplicate was not overwritten");
         }
         for (PingedURL url : URLTEST.getUrls()) {
-        System.out.println("Name: " + url.getName() + ", URL: " + url.getUrl());
+            System.out.println("Name: " + url.getName() + ", URL: " + url.getUrl());
         }
     }
     private void testupdate(MemoryURLRepository URLTEST) {
