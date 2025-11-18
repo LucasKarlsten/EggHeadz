@@ -1,5 +1,3 @@
 spring:
   application:
     name: pingurl
-  server:
-    port: 8080

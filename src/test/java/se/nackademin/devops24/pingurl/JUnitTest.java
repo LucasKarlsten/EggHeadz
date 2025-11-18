@@ -3,16 +3,20 @@ package se.nackademin.devops24.pingurl;
 import com.microsoft.playwright.*;
 import org.junit.jupiter.api.*;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.web.server.LocalServerPort;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT)
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class JUnitTest {
     private Playwright playwright;
     private Browser browser;
     private BrowserContext context;
     private Page page;
+
+    @LocalServerPort
+    private int port;
 
     @BeforeAll
     void setup() {
@@ -50,7 +54,7 @@ public class JUnitTest {
 
     @Test
     void testAddUserandPing() {
-        page.navigate("http://localhost:8080");
+        page.navigate("http://localhost:" + port);
         page.fill("input[name='name']:visible", "Google.com");
         page.fill("input[name='url']:visible", "https://www.google.com");
         page.click("input[type='submit']");
