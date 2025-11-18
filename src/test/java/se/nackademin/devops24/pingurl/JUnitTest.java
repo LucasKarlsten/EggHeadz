@@ -55,17 +55,13 @@ public class JUnitTest {
 
     @Test
     void testAddUserandPing() {
-        if (!page.locator("table tr td:has-text('Nackademin.se')").isVisible()) {
-            page.fill("input[name='name']:visible", "Nackademin.se");
-            page.fill("input[name='url']:visible", "https://www.Nackademin.se");
-            page.click("input[type='submit']");
-        }
-
-        if (!page.locator("table tr td:has-text('DN.se')").isVisible()) {
-            page.fill("input[name='name']:visible", "DN.se");
-            page.fill("input[name='url']:visible", "https://www.DN.se");
-            page.click("input[type='submit']");
-        }
+        page.navigate("http://localhost:" + serverPort);
+        page.fill("input[name='name']:visible", "Nackademin.se");
+        page.fill("input[name='url']:visible", "https://www.Nackademin.se");
+        page.click("input[type='submit']");
+        page.fill("input[name='name']:visible", "DN.se");
+        page.fill("input[name='url']:visible", "https://www.DN.se");
+        page.click("input[type='submit']");
         page.click("table tr:nth-child(1) form button[type='submit']");
         page.click("table tr:nth-child(2) form button[type='submit']");
     }
