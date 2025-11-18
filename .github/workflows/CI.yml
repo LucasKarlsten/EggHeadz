@@ -8,9 +8,7 @@
 
 name: Java CI with Maven
 
-on:
-  push:
-    branches: [ "**" ]        # Testar alla branches när det pushas
+on:        # Testar alla branches när det pushas
   pull_request:
     branches: [ "main" ]      # Och PR:ar mot main
 
