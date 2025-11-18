@@ -7,6 +7,8 @@ import org.springframework.boot.test.web.server.LocalServerPort;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class JUnitTest {
     private Playwright playwright;
