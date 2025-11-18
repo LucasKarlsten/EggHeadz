@@ -24,7 +24,7 @@ public class JUnitTest {
     void setup() {
         playwright = Playwright.create();
         browser = playwright.chromium().launch(
-                new BrowserType.LaunchOptions().setHeadless(true)
+                new BrowserType.LaunchOptions().setHeadless(false)
         );
         context = browser.newContext(
                 new Browser.NewContextOptions().setIgnoreHTTPSErrors(true)
@@ -57,8 +57,8 @@ public class JUnitTest {
     @Test
     void testAddUserandPing() {
         page.navigate("http://localhost:" + serverPort);
-        deleteIfExists("Nackademin.se");
-        deleteIfExists("DN.se");
+        //deleteIfExists("Nackademin.se");
+        //deleteIfExists("DN.se");
         page.fill("input[name='name']:visible", "Nackademin.se");
         page.fill("input[name='url']:visible", "https://www.Nackademin.se");
         page.click("input[type='submit']");
@@ -68,12 +68,12 @@ public class JUnitTest {
         page.click("table tr:nth-child(1) form button[type='submit']");
         page.click("table tr:nth-child(2) form button[type='submit']");
     }
-    private void deleteIfExists(String name) {
-        Locator row = page.locator("table tr:has(td:has-text('" + name + "'))");
-        if (row.isVisible()) {
-            row.locator("form:has(button:has-text('Delete')) button[type='submit']").click();
-            // Optional: wait for the row to disappear
-            row.waitFor(new Locator.WaitForOptions().setState(WaitForSelectorState.DETACHED));
-        }
-    }
+    //private void deleteIfExists(String name) {
+    //    Locator row = page.locator("table tr:has(td:has-text('" + name + "'))");
+    //    if (row.isVisible()) {
+    //        row.locator("form:has(button:has-text('Delete')) button[type='submit']").click();
+    //        // Optional: wait for the row to disappear
+    //        row.waitFor(new Locator.WaitForOptions().setState(WaitForSelectorState.DETACHED));
+    //    }
+    //}
 }
