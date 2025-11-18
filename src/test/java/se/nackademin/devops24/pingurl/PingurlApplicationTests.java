@@ -10,7 +10,6 @@ import java.net.URL;
 import java.util.Objects;
 
 @Nested
-@SpringBootTest
 class PingurlApplicationTests {
 
     //@Test
