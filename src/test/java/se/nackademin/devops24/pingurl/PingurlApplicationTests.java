@@ -19,12 +19,10 @@ class PingurlApplicationTests {
 
     @Test
     public void MemoryURLRepositoryTest() {
-        //.setName(name)
-        //.setUrl(url)
         MemoryURLRepository URLTEST = new MemoryURLRepository();
         testsave(URLTEST);
-        //testupdate(URLTEST);
-        //testdelete(URLTEST);
+        testupdate(URLTEST);
+        testdelete(URLTEST);
 
     }
     private void testsave(MemoryURLRepository URLTEST) {

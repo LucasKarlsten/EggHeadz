@@ -2,8 +2,11 @@ package se.nackademin.devops24.pingurl;
 
 import com.microsoft.playwright.*;
 import org.junit.jupiter.api.*;
+import org.springframework.boot.test.context.SpringBootTest;
+
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT)
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class JUnitTest {
     private Playwright playwright;
