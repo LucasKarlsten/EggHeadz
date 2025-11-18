@@ -14,13 +14,21 @@ public class JUnitTest {
     @BeforeAll
     void setup() {
         playwright = Playwright.create();
-        browser = playwright.chromium().launch(new BrowserType.LaunchOptions().setHeadless(true));
-        context = browser.newContext(new Browser.NewContextOptions().setIgnoreHTTPSErrors(true));
+        browser = playwright.chromium().launch(
+                new BrowserType.LaunchOptions().setHeadless(true)
+        );
+        context = browser.newContext(
+                new Browser.NewContextOptions().setIgnoreHTTPSErrors(true)
+        );
     }
 
     @BeforeEach
     void createPage() {
         page = context.newPage();
+        // Set default timeout for actions (like fill, click) to 2 minutes
+        page.setDefaultTimeout(120_000);
+        // Set navigation timeout (for page.navigate) to 2 minutes
+        page.setDefaultNavigationTimeout(120_000);
     }
 
     @AfterEach
@@ -48,6 +56,5 @@ public class JUnitTest {
         page.click("input[type='submit']");
         page.click("table tr:nth-child(1) form button[type='submit']");
         page.click("table tr:nth-child(2) form button[type='submit']");
-
     }
 }
