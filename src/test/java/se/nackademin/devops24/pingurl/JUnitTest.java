@@ -1,6 +1,7 @@
 package se.nackademin.devops24.pingurl;
 
 import com.microsoft.playwright.*;
+import com.microsoft.playwright.options.WaitForSelectorState;
 import org.junit.jupiter.api.*;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.server.LocalServerPort;
@@ -56,6 +57,8 @@ public class JUnitTest {
     @Test
     void testAddUserandPing() {
         page.navigate("http://localhost:" + serverPort);
+        deleteIfExists("Nackademin.se");
+        deleteIfExists("DN.se");
         page.fill("input[name='name']:visible", "Nackademin.se");
         page.fill("input[name='url']:visible", "https://www.Nackademin.se");
         page.click("input[type='submit']");
@@ -64,5 +67,13 @@ public class JUnitTest {
         page.click("input[type='submit']");
         page.click("table tr:nth-child(1) form button[type='submit']");
         page.click("table tr:nth-child(2) form button[type='submit']");
+    }
+    private void deleteIfExists(String name) {
+        Locator row = page.locator("table tr:has(td:has-text('" + name + "'))");
+        if (row.isVisible()) {
+            row.locator("form:has(button:has-text('Delete')) button[type='submit']").click();
+            // Optional: wait for the row to disappear
+            row.waitFor(new Locator.WaitForOptions().setState(WaitForSelectorState.DETACHED));
+        }
     }
 }
