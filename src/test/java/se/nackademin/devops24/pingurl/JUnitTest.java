@@ -17,7 +17,7 @@ public class JUnitTest {
     private Page page;
 
     @LocalServerPort
-    private int port;
+    public int serverPort;
 
     @BeforeAll
     void setup() {
@@ -55,7 +55,7 @@ public class JUnitTest {
 
     @Test
     void testAddUserandPing() {
-        page.navigate("http://localhost:" + port);
+        page.navigate("http://localhost:" + serverPort);
         page.fill("input[name='name']:visible", "Google.com");
         page.fill("input[name='url']:visible", "https://www.google.com");
         page.click("input[type='submit']");
