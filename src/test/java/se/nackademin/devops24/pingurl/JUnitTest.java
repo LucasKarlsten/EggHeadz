@@ -42,6 +42,12 @@ public class JUnitTest {
 
     @AfterEach
     void closePage() {
+        Page cleaningPage= context.newPage();
+        cleaningPage.setDefaultTimeout(10_000);
+        cleaningPage.navigate("http://localhost:" + serverPort);
+        page.click("tr:has(td:has-text('Nackademin.se')) form:has(button:has-text('Delete')) button");
+        page.click("tr:has(td:has-text('DN.se')) form:has(button:has-text('Delete')) button");
+        cleaningPage.close();
         if (page != null) {
             page.close();
         }
@@ -62,11 +68,9 @@ public class JUnitTest {
         page.click("input[type='submit']");
         page.fill("input[name='name']:visible", "DN.se");
         page.fill("input[name='url']:visible", "https://www.DN.se");
-        page.click("input[type='submit']");
+        page.click  ("input[type='submit']");
         page.click("table tr:nth-child(1) form button[type='submit']");
         page.click("table tr:nth-child(2) form button[type='submit']");
-        page.click("tr:has(td:has-text('Nackademin.se')) form:has(button:has-text('Delete')) button");
-        page.click("tr:has(td:has-text('DN.se')) form:has(button:has-text('Delete')) button");
     }
 
 }
