@@ -1,1 +1,7 @@
-[ ]
+[ {
+  "name" : "test-url",
+  "url" : "http://localhost:9999/ok",
+  "createdAt" : [ 2025, 11, 20, 15, 20, 56, 892893221 ],
+  "lastPinged" : [ 2025, 11, 20, 15, 20, 57, 119645673 ],
+  "result" : "success"
+} ]
