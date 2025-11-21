@@ -1,6 +1,7 @@
 package se.nackademin.devops24.pingurl.model;
 
 import java.time.LocalDateTime;
+import java.util.Objects;
 
 public class PingedURL {
     private String name;
@@ -51,5 +52,19 @@ public class PingedURL {
 
     public void setResult(String result) {
         this.result = result;
+    }
+
+    // --- Handle duplicates by URL ---
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof PingedURL)) return false;
+        PingedURL that = (PingedURL) o;
+        return Objects.equals(url, that.url);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(url);
     }
 }
